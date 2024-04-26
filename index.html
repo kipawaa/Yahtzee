@@ -12,41 +12,55 @@
     </head>
 
     <table>
-        <th>Upper Section</th>
         <tr>
-            <td>Ones</td> 
+            <th>Upper Section</th>
+            <th>Description</th>
+            <td><input type="text" id="player_1"></input></td>
+            <td><button name="Add Player" onclick=add_player()>Add Player</button></td>
+        </tr>
+        <tr>
+            <td>Ones</td>
+            <td>Count and Add Only Ones</td>
             <td><input type="number" id="ones" onclick=update_upper() onkeyup=update_upper() step=1 min=0 max=5></input></td>
         </tr>
         <tr>
             <td>Twos</td>
+            <td>Count and Add Only Twos</td>
             <td><input type="number" id="twos" onclick=update_upper() onkeyup=update_upper() step=2 min=0 max=10></input></td>
         </tr>
         <tr>
             <td>Threes</td>
+            <td>Count and Add Only Threes</td>
             <td><input type="number" id="threes" onclick=update_upper() onkeyup=update_upper() step=3 min=0 max=15></input></td>
         </tr>
         <tr>
             <td>Fours</td>
+            <td>Count and Add Only Fours</td>
             <td><input type="number" id="fours" onclick=update_upper() onkeyup=update_upper() step=4 min=0 max=20></input></td>
         </tr>
         <tr>
             <td>Fives</td>
+            <td>Count and Add Only Fives</td>
             <td><input type="number" id="fives" onclick=update_upper() onkeyup=update_upper() step=5 min=0 max=25></input></td>
         </tr>
         <tr>
             <td>Sixes</td>
+            <td>Count and Add Only Sixes</td>
             <td><input type="number" id="sixes" onclick=update_upper() onkeyup=update_upper() step=6 min=0 max=30></input></td>
         </tr>
         <tr>
             <th>Upper Section Subtotal</th>
+            <td>Total of Above Rows</td>
             <td/ id="upper_subtotal">
         </tr>
         <tr>
             <th>Upper Section Bonus</th>
+            <td>Score 35</td>
             <td/ id="upper_bonus">
         </tr>
         <tr>
             <th>Upper Section Total</th>
+            <td>Total of Above Rows</td>
             <td/ id="upper_total">
         </tr>
 
@@ -55,34 +69,42 @@
         <th>Lower Section</th>
         <tr>
             <td>Three of a Kind</td>
+            <td>Add Total of All Dice</td>
             <td><input type="number" id="toak" onclick=update_upper() onkeyup=update_lower() min=0 max=30></input></td>
         </tr>
         <tr>
             <td>Four of a Kind</td>
+            <td>Add Total of All Dice</td>
             <td><input type="number" id="foak" onclick=update_upper() onkeyup=update_lower() min=0 max=30></input></td>
         </tr>
         <tr>
             <td>Full House</td>
+            <td>Score 25</td>
             <td><input type="checkbox" id="full_house" onclick=update_lower()></input></td>
         </tr>
         <tr>
             <td>Small Straight</td>
+            <td>Score 30</td>
             <td><input type="checkbox" id="small_straight" onclick=update_lower()></input></td>
         </tr>
         <tr>
             <td>Large Straight</td>
+            <td>Score 40</td>
             <td><input type="checkbox" id="large_straight" onclick=update_lower()></input></td>
         </tr>
         <tr>
             <td>Yahtzee</td>
+            <td>Score 50</td>
             <td><input type="checkbox" id="yahtzee" onclick=update_lower()></input></td>
         </tr>
         <tr>
             <td>Chance</td>
+            <td>Add Total of All Dice</td>
             <td><input type="number" id="chance" onclick=update_upper() onkeyup=update_lower() min=0 max=36></input></td>
         </tr>
         <tr>
             <td>Bonus Yahtzee</td>
+            <td>Score 100 each</td>
             <td>
                 <input type="checkbox" id="bonus_yahtzee1" onclick=update_lower()></input>
                 <input type="checkbox" id="bonus_yahtzee2" onclick=update_lower()></input>
@@ -94,11 +116,13 @@
         </tr>
         <tr>
             <th>Lower Section Total</th>
+            <td>Total of Above Rows</td>
             <td/ id="lower_total">
         </tr>
         <tr/>
         <tr>
             <th>Total</th>
+            <td>Game Total</td>
             <td/ id="total">
         </tr>
     </table>

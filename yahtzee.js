@@ -2,6 +2,9 @@ function update_upper() {
     // get the subtotal for the upper section
     var subtotal = 0;
     
+    // keep track of expected scores for bonus
+    var expected = 0;
+    
     // get elements
     ones_element = document.getElementById("ones");
     twos_element = document.getElementById("twos");
@@ -11,12 +14,12 @@ function update_upper() {
     sixes_element = document.getElementById("sixes");
     
     // get values for input fields
-    ones = parseInt(ones_element.value);
-    twos = parseInt(twos_element.value);
-    threes = parseInt(threes_element.value);
-    fours = parseInt(fours_element.value);
-    fives = parseInt(fives_element.value);
-    sixes = parseInt(sixes_element.value);
+    ones = ones_element.value;
+    twos = twos_element.value;
+    threes = threes_element.value;
+    fours = fours_element.value;
+    fives = fives_element.value;
+    sixes = sixes_element.value;
 
     // validity checking
     if (!ones_element.validity.valid) {
@@ -44,15 +47,23 @@ function update_upper() {
         return;
     }
 
-    console.log("made it through validity");
-
     // add values from input fields to subtotal
-    subtotal += ones ? ones: 0;
-    subtotal += twos ? twos: 0;
-    subtotal += threes ? threes: 0;
-    subtotal += fours ? fours: 0;
-    subtotal += fives ? fives: 0;
-    subtotal += sixes ? sixes: 0;
+    subtotal += ones === "" ? 0: parseInt(ones);
+    subtotal += twos === "" ? 0: parseInt(twos);
+    subtotal += threes === "" ? 0: parseInt(threes);
+    subtotal += fours === "" ? 0: parseInt(fours);
+    subtotal += fives === "" ? 0: parseInt(fives);
+    subtotal += sixes === "" ? 0: parseInt(sixes);
+    console.log("subtotal: " + subtotal);
+
+    // add values for expected
+    expected += ones === "" ? 0: 3;
+    expected += twos === "" ? 0: 6;
+    expected += threes === "" ? 0: 9;
+    expected += fours === "" ? 0: 12;
+    expected += fives === "" ? 0: 15;
+    expected += sixes === "" ? 0: 18;
+    console.log("expected: " + expected);
 
     // update the subtotal
     document.getElementById("upper_subtotal").textContent = subtotal;
@@ -61,11 +72,16 @@ function update_upper() {
     var bonus = 0;
     
     // if the total is less than 63 then no bonus
-    if (subtotal < 63) {
+    if (subtotal < expected) {
         // update the bonus text for the number of missing points
-        document.getElementById("upper_bonus").textContent = "missing " + (63 - subtotal) + " points for bonus";
+        document.getElementById("upper_bonus").textContent = expected - subtotal + " Below Expectation";
     } else {
-        // if the total is 63 or higher then add the bonus
+        document.getElementById("upper_bonus").textContent = "On Track!";
+    }
+
+    // if the total is 63 or higher then add the bonus
+    if (subtotal >= 63) {
+        document.getElementById("upper_bonus").textContent = "Bonus Attained!";
         document.getElementById("upper_bonus").textContent = "35";
         bonus = 35
     }
