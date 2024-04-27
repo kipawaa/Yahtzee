@@ -1,5 +1,8 @@
-body {
+:root {
         color-scheme: light dark;
+}
+
+body {
         background-color: Canvas;
         color: CanvasText;
 }
