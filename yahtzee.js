@@ -75,13 +75,13 @@ function update_upper() {
     if (subtotal < expected) {
         // update the bonus text for the number of missing points
         document.getElementById("upper_bonus").textContent = expected - subtotal + " Below Expectation";
-    } else {
+    } else if (subtotal === expected) {
         document.getElementById("upper_bonus").textContent = "On Track!";
-    }
+    } else{
+        document.getElementById("upper_bonus").textContent = subtotal - expected + "Above Expectation";
 
     // if the total is 63 or higher then add the bonus
     if (subtotal >= 63) {
-        document.getElementById("upper_bonus").textContent = "Bonus Attained!";
         document.getElementById("upper_bonus").textContent = "35";
         bonus = 35
     }
