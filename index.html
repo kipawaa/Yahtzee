@@ -19,7 +19,7 @@
             <td><button name="Add Player" onclick=add_player()>Add Player</button></td>
         </tr>
         <tr id="ones_row">
-            <td><button name="Ones" onclick=scratch_ones()>Ones</button></td>
+            <td><button id="ones">Ones</button></td>
             <td>Count and Add Only Ones</td>
             <td>
                 <input type="checkbox" id="ones1"></input>
@@ -30,7 +30,7 @@
             </td>
         </tr>
         <tr id="twos_row">
-            <td>Twos</td>
+            <td><button id="twos">Twos</button></td>
             <td>Count and Add Only Twos</td>
             <td>
                 <input type="checkbox" id="twos1"></input>
@@ -41,7 +41,7 @@
             </td>
         </tr>
         <tr id="threes_row">
-            <td>Threes</td>
+            <td><button id="threes">Threes</button</td>
             <td>Count and Add Only Threes</td>
             <td>
                 <input type="checkbox" id="threes1"></input>
@@ -52,7 +52,7 @@
             </td>
         </tr>
         <tr id="fours_row">
-            <td>Fours</td>
+            <td><button id="fours">Fours</button</td>
             <td>Count and Add Only Fours</td>
             <td>
                 <input type="checkbox" id="fours1"></input>
@@ -62,7 +62,7 @@
                 <input type="checkbox" id="fours5"></input>
             </td>        </tr>
         <tr id="fives_row">
-            <td>Fives</td>
+            <td><button id="fives">Fives</button></td>
             <td>Count and Add Only Fives</td>
             <td>
                 <input type="checkbox" id="fives1"></input>
@@ -72,7 +72,7 @@
                 <input type="checkbox" id="fives5"></input>
             </td>        </tr>
         <tr id="sixes_row">
-            <td>Sixes</td>
+            <td><button id="sixes">Sixes</button></td>
             <td>Count and Add Only Sixes</td>
             <td>
                 <input type="checkbox" id="sixes1"></input>
@@ -101,39 +101,39 @@
         <tr><td style="border: none;">&nbsp;</td><td style="border:none;"/></tr>
         <th>Lower Section</th>
         <tr id="toak_row">
-            <td>Three of a Kind</td>
+            <td><button id="toak">Three of a Kind</button></td>
             <td>Add Total of All Dice</td>
-            <td><input type="number" id="toak" min=0 max=30></input></td>
+            <td><input type="number" id="toak_score" min=0 max=30></input></td>
         </tr>
         <tr id="foak_row">
-            <td>Four of a Kind</td>
+            <td><button id="foak">Four of a Kind</button></td>
             <td>Add Total of All Dice</td>
-            <td><input type="number" id="foak" min=0 max=30></input></td>
+            <td><input type="number" id="foak_score" min=0 max=30></input></td>
         </tr>
         <tr id="full_house_row">
-            <td>Full House</td>
+            <td><button id="full_house">Full House</button></td>
             <td>Score 25</td>
-            <td><input type="checkbox" id="full_house"></input></td>
+            <td><input type="checkbox" id="full_house_score"></input></td>
         </tr>
         <tr id="small_straight_row">
-            <td>Small Straight</td>
+            <td><button id="small_straight">Small Straight</button></td>
             <td>Score 30</td>
-            <td><input type="checkbox" id="small_straight"></input></td>
+            <td><input type="checkbox" id="small_straight_score"></input></td>
         </tr>
         <tr id="large_straight_row">
-            <td>Large Straight</td>
+            <td><button id="large_straight">Large Straight</button></td>
             <td>Score 40</td>
-            <td><input type="checkbox" id="large_straight"></input></td>
+            <td><input type="checkbox" id="large_straight_score"></input></td>
         </tr>
         <tr id="yahtzee_row">
-            <td>Yahtzee</td>
+            <td><button id="yahtzee">Yahtzee</button></td>
             <td>Score 50</td>
-            <td><input type="checkbox" id="yahtzee"></input></td>
+            <td><input type="checkbox" id="yahtzee_score"></input></td>
         </tr>
         <tr id="chance_row">
-            <td>Chance</td>
+            <td><button id="chance">Chance</button></td>
             <td>Add Total of All Dice</td>
-            <td><input type="number" id="chance" min=0 max=36></input></td>
+            <td><input type="number" id="chance_score" min=0 max=36></input></td>
         </tr>
         <tr id="bonus_yahtzee_row">
             <td>Bonus Yahtzee</td>

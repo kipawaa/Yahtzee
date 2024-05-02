@@ -1,6 +1,7 @@
-import { update_upper, update_lower } from "./modules/yahtzee.js"
+import { update_upper, update_lower } from "./modules/scoring.js"
+import { scratch } from "./modules/scratch.js"
 
-// add eventlisteners for upper section
+// add eventlisteners for upper section scoring
 document.getElementById("ones1").addEventListener("click", update_upper);
 document.getElementById("ones2").addEventListener("click", update_upper);
 document.getElementById("ones3").addEventListener("click", update_upper);
@@ -37,19 +38,34 @@ document.getElementById("sixes3").addEventListener("click", update_upper);
 document.getElementById("sixes4").addEventListener("click", update_upper);
 document.getElementById("sixes5").addEventListener("click", update_upper);
 
-// add eventlisteners for lower section
-document.getElementById("toak").addEventListener("click", update_lower);
-document.getElementById("toak").addEventListener("keyup", update_lower);
-document.getElementById("foak").addEventListener("click", update_lower);
-document.getElementById("foak").addEventListener("keyup", update_lower);
-document.getElementById("full_house").addEventListener("click", update_lower);
-document.getElementById("small_straight").addEventListener("click", update_lower);
-document.getElementById("large_straight").addEventListener("click", update_lower);
-document.getElementById("yahtzee").addEventListener("click", update_lower);
-document.getElementById("chance").addEventListener("click", update_lower);
-document.getElementById("chance").addEventListener("keyup", update_lower);
+// add eventlisteners for lower section scoring
+document.getElementById("toak_score").addEventListener("click", update_lower);
+document.getElementById("toak_score").addEventListener("keyup", update_lower);
+document.getElementById("foak_score").addEventListener("click", update_lower);
+document.getElementById("foak_score").addEventListener("keyup", update_lower);
+document.getElementById("full_house_score").addEventListener("click", update_lower);
+document.getElementById("small_straight_score").addEventListener("click", update_lower);
+document.getElementById("large_straight_score").addEventListener("click", update_lower);
+document.getElementById("yahtzee_score").addEventListener("click", update_lower);
+document.getElementById("chance_score").addEventListener("click", update_lower);
+document.getElementById("chance_score").addEventListener("keyup", update_lower);
 document.getElementById("bonus_yahtzee1").addEventListener("click", update_lower);
 document.getElementById("bonus_yahtzee2").addEventListener("click", update_lower);
 document.getElementById("bonus_yahtzee3").addEventListener("click", update_lower);
 document.getElementById("bonus_yahtzee4").addEventListener("click", update_lower);
 document.getElementById("bonus_yahtzee5").addEventListener("click", update_lower);
+
+// add event listeners for scratching
+document.getElementById("ones").addEventListener("click", scratch);
+document.getElementById("twos").addEventListener("click", scratch);
+document.getElementById("threes").addEventListener("click", scratch);
+document.getElementById("fours").addEventListener("click", scratch);
+document.getElementById("fives").addEventListener("click", scratch);
+document.getElementById("sixes").addEventListener("click", scratch);
+document.getElementById("toak").addEventListener("click", scratch);
+document.getElementById("foak").addEventListener("click", scratch);
+document.getElementById("full_house").addEventListener("click", scratch);
+document.getElementById("small_straight").addEventListener("click", scratch);
+document.getElementById("large_straight").addEventListener("click", scratch);
+document.getElementById("yahtzee").addEventListener("click", scratch);
+document.getElementById("chance").addEventListener("click", scratch);

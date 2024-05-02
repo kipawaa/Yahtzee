@@ -1,4 +1,5 @@
 import { get_ones, get_twos, get_threes, get_fours, get_fives, get_sixes } from "./get_nums.js"
+import { is_scratched, scratch } from "./scratch.js"
 
 export function update_upper() {
     // get the subtotal for the upper section
@@ -7,7 +8,17 @@ export function update_upper() {
     // keep track of expected scores for bonus
     let expected = 0;
     
-    // get values from input fields
+    // get values from input fields and update subtotal and expected
+    // if scratched:
+    //      ones = 0
+    //      expected += 3
+    // if not scratched:
+    //      ones = get_ones()
+    //      expected += 3
+    // if get_ones() == 0:
+    //      no update to ones
+    //      no update to expected
+
     let ones = get_ones();
     let twos = get_twos();
     let threes = get_threes();
@@ -15,9 +26,42 @@ export function update_upper() {
     let fives = get_fives();
     let sixes = get_sixes();
 
-    // update subtotal and expected
-    subtotal += ones + twos + threes + fours + fives + sixes;
-    
+    if (is_scratched["ones"]) expected += 3;
+    else if (ones) {
+        subtotal += ones;
+        expected += 3;
+    }
+
+    if (is_scratched["twos"]) expected += 6;
+    else if (twos) {
+        subtotal += twos;
+        expected += 6;
+    }
+
+    if (is_scratched["threes"]) expected += 9;
+    else if (threes) {
+        subtotal += threes;
+        expected += 9;
+    }
+
+    if (is_scratched["fours"]) expected += 12;
+    else if (fours) {
+        subtotal += fours;
+        expected += 12;
+    }
+
+    if (is_scratched["fives"]) expected += 15;
+    else if (fives) {
+        subtotal += fives;
+        expected += 15;
+    }
+
+    if (is_scratched["sixes"]) expected += 18;
+    else if (sixes) {
+        subtotal += sixes;
+        expected += 18;
+    }
+
     // update the subtotal field
     document.getElementById("upper_subtotal").textContent = subtotal;
 
@@ -51,15 +95,15 @@ export function update_lower() {
     let total = 0;
 
     // get elements from document
-    let toak_element = document.getElementById("toak");
-    let foak_element = document.getElementById("foak");
-    let chance_element = document.getElementById("chance");
+    let toak_element = document.getElementById("toak_score");
+    let foak_element = document.getElementById("foak_score");
+    let chance_element = document.getElementById("chance_score");
     
     // get values from input fields
-    let full_house = document.getElementById("full_house").checked;
-    let small_straight = document.getElementById("small_straight").checked;
-    let large_straight = document.getElementById("large_straight").checked;
-    let yahtzee = document.getElementById("yahtzee").checked;
+    let full_house = document.getElementById("full_house_score").checked;
+    let small_straight = document.getElementById("small_straight_score").checked;
+    let large_straight = document.getElementById("large_straight_score").checked;
+    let yahtzee = document.getElementById("yahtzee_score").checked;
     let bonus_yahtzee1 = document.getElementById("bonus_yahtzee1").checked;
     let bonus_yahtzee2 = document.getElementById("bonus_yahtzee2").checked;
     let bonus_yahtzee3 = document.getElementById("bonus_yahtzee3").checked;
@@ -88,13 +132,13 @@ export function update_lower() {
 
 
     // update total based on input fields
-    total += toak ? toak: 0;
-    total += foak ? foak: 0;
-    total += full_house ? 25: 0;
-    total += small_straight ? 30: 0;
-    total += large_straight ? 40: 0;
-    total += yahtzee ? 50: 0;
-    total += chance ? chance: 0;
+    total += (toak && !is_scratched["toak"]) ? toak: 0;
+    total += (foak && !is_scratched["foak"]) ? foak: 0;
+    total += (full_house && !is_scratched["full_house"]) ? 25: 0;
+    total += (small_straight && !is_scratched["small_straight"]) ? 30: 0;
+    total += (large_straight && !is_scratched["large_straight"]) ? 40: 0;
+    total += (yahtzee && !is_scratched["yahtzee"]) ? 50: 0;
+    total += (chance && !is_scratched["chance"]) ? chance: 0;
     total += bonus_yahtzee1 ? 100: 0;
     total += bonus_yahtzee2 ? 100: 0;
     total += bonus_yahtzee3 ? 100: 0;
