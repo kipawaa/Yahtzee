@@ -13,6 +13,10 @@ td, th {
         text-align: center;
 }
 
+input {
+        touch-action: manipulation;
+}
+
 .strike {
         text-decoration: line-through;
 }
