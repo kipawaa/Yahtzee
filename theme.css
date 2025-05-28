@@ -5,6 +5,9 @@
 body {
         background-color: Canvas;
         color: CanvasText;
+}
+
+table {
         width: 100%;
 }
 
@@ -19,11 +22,16 @@ input {
         touch-action: manipulation;
 }
 
-tr.strikeout td:before {
-        content: " ";
+.scratch td {
+        position: relative;
+}
+
+.scratch td::before {
+        content: "";
         position: absolute;
         top: 50%;
         left: 0;
-        border-bottom: 2px solid #FFFFFF;
+        height: 1px;
         width: 100%;
+        background-color: currentColor;
 }

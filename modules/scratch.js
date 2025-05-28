@@ -22,7 +22,7 @@ export function scratch(event) {
     let row = element.parentElement.parentElement;
 
     // toggle strike-through on the element
-    row.classList.toggle("strikeout");
+    row.classList.toggle("scratch");
     console.log(row.classList);
 
     // update is_scratched for this element
