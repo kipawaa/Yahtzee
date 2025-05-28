@@ -8,6 +8,7 @@ body {
 }
 
 td, th {
+        position: relative;
         border: 1px solid;
         padding: 10px 20px;
         text-align: center;
@@ -17,6 +18,11 @@ input {
         touch-action: manipulation;
 }
 
-.strike {
-        text-decoration: line-through;
+tr.strikeout td:before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        border-bottom: 2px solid #FFFFFF;
+        width: 100%;
 }

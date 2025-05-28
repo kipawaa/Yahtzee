@@ -19,9 +19,11 @@ export let is_scratched = {
 export function scratch(event) {
     // get the element that is being scratched/unscratched
     let element = event.target;
+    let row = element.parentElement.parentElement;
 
     // toggle strike-through on the element
-    element.classList.toggle("strike");
+    row.classList.toggle("strikeout");
+    console.log(row.classList);
 
     // update is_scratched for this element
     is_scratched[element.id] = !is_scratched[element.id];
