@@ -2,6 +2,18 @@
         color-scheme: light dark;
 }
 
+@media(prefers-color-scheme: light) {
+        button {
+                color: #000000;
+        }
+}
+
+@media(prefers-color-scheme: dark) {
+        button {
+                color: #FFFFFF;
+        }
+}
+
 body {
         background-color: Canvas;
         color: CanvasText;
@@ -25,6 +37,7 @@ input {
 
 input, select, textarea {
         font-size: 16px !important;
+        color: currentColor;
 }
 
 .scratch td {
